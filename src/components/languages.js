@@ -20,21 +20,21 @@ const Languages = ({ language, onLanguageChange }) => {
   if (language === undefined) {
     language = "es";
   }
-  const languageConfig = LANGUAGES.find(l => l.value === language);
+  const languageConfig = LANGUAGES.find((l) => l.value === language);
   if (!languageConfig) {
     throw new Error(`Unknown language code '${language}'`);
   }
 
   const [open, setOpen] = useState(false);
 
-  const onSelect = language => {
+  const onSelect = (language) => {
     setOpen(false);
     onLanguageChange(language);
   };
 
   return (
-    <div>
-      <label className="label">Select Language</label>
+    <section className="translate-to">
+      <label className="label">Select Which Translation</label>
       <div className={`dropdown ${open && "is-active"}`}>
         <div className="dropdown-trigger">
           <button className="button" onClick={() => setOpen(!open)}>
@@ -60,7 +60,7 @@ const Languages = ({ language, onLanguageChange }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

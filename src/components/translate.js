@@ -14,7 +14,7 @@ const doTranslation = async (input, languageCode, cancelToken) => {
 
     return data.data.translations[0].translatedText;
   } catch (err) {
-    return "";
+    return "Mistake Will Robinson";
   }
 };
 
@@ -38,9 +38,9 @@ export default ({ language, text }) => {
   }, [text, language]);
 
   return (
-    <div>
-      <label className="label">Output</label>
+    <section className="translation">
+      <label className="label">Beep Boop Beep here is your translation:</label>
       <h1 className="title">{translated}</h1>
-    </div>
+    </section>
   );
 };

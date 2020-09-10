@@ -9,13 +9,11 @@ export default function App() {
   const [text, setText] = useState("");
 
   return (
-    <div className="app">
+    <div className="translate-app">
       <Field label="Enter English" onChange={setText} value={text} />
       <Languages language={language} onLanguageChange={setLanguage} />
       <hr />
-      <section>
-        <Translate text={text} language={language} />
-      </section>
+      <Translate text={text} language={language} />
     </div>
   );
 }
